@@ -1,0 +1,66 @@
+\documentclass[12pt]{article}
+\usepackage{float}
+\usepackage{sbc-template}
+\usepackage{graphicx,url}
+\usepackage[brazil]{babel}   
+\usepackage[utf8]{inputenc} 
+\usepackage{verbatim}
+\usepackage{tabularx}
+\usepackage{array}
+
+% pacote para citações entre aspas
+\usepackage{dirtytalk}
+     
+% Tabela com linhas de espessuras diferentes
+\usepackage{booktabs}
+
+% Colunas de largura fixa, com diversos alinhamentos do texto (centralizado, direita, esquerda)
+% Exemplo de uso: C{2.5cm}
+\usepackage{array}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\arraybackslash}m{#1}}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}m{#1}}
+
+% Evitando linhas órfãs (club) e viúvas (widow)
+\clubpenalty=1000000
+\widowpenalty=1000000
+     
+\sloppy
+
+\title{Classificação da Dificuldade de Questões de Programação: Aprofundando o Estudo Exploratório em Juízes Online}
+
+\author{Victor Hugo Oliveira de Melo, Thiago Reis Santana, Fabíola Guerra Nakamura,\\Elaine Harada Teixeira de Oliveira, David Fernandes Oliveira,\\Leandro Silva Galvão de Carvalho}
+
+
+\address{Instituto de Computação -- Universidade Federal do Amazonas (UFAM)\\
+  Av. Gal. Rodrigo Octávio, 6200, Coroado I -- 69080-900 -- Manaus -- AM -- Brasil
+  \email{\{victor.melo,thiago.santana,fabiola,elaine,david,galvao\}@icomp.ufam.edu.br}
+}
+
+\begin{document}
+
+\maketitle
+
+\begin{resumo}
+Os juízes online, para avaliar respostas de questões de programação, produzem dois tipos de feedback: certo ou errado. Assim, elas podem ser modeladas como itens dicotômicos, pois produzem apenas dois estados de avaliação. Este estudo aplica algoritmos de aprendizado de máquina com o objetivo de prever, além dos indicadores de dificuldade já conhecidos, a taxa de acerto e a capacidade de discriminação de questões de escrita de código no contexto de uma disciplina introdutória de programação. Nos experimentos, os classificadores apresentaram pior desempenho ao discriminar entre três categorias, em comparação a duas. Neste último caso, foi alcançado um f1-score de 0,81 para prever a taxa de acerto e 0,89 para a capacidade de discriminação.
+\end{resumo}
+
+\begin{abstract}
+Online judges, used to evaluate programming question responses, produce two types of feedback: correct or incorrect. Thus, they can be modeled as dichotomous items, as they only generate two assessment states. This study applies machine learning algorithms with the objective of predicting, in addition to known difficulty indicators, the accuracy rate and the discrimination ability of code-writing questions in the context of an introductory programming course. In the experiments, the classifiers performed worse when discriminating among three categories compared to two. In the latter case, an F1-score of 0.81 was achieved for predicting the accuracy rate and 0.89 for discrimination ability.
+\end{abstract}
+
+%==============================================================================
+\section{Introdução}
+
+No ensino de programação introdutória, um dos objetivos principais é desenvolver nos estudantes a competência de \say{resolver problemas que tenham solução algorítmica} \cite{referenciaisSBC2017}. Para atingir esse fim, enfatiza-se a resolução de variados exercícios que abordam os conceitos apresentados, o que hoje em dia é feito por plataformas de correção automática de códigos, conhecidas como juízes online (JOs). Nelas, os instrutores cadastram problemas de programação com graus variados de dificuldade. Para programadores experientes --- como no contexto de competições, onde surgiram os primeiros JOs \cite{Wasik2018} ---, o nível de dificuldade não é uma preocupação. Contudo, para programadores iniciantes, é muito importante apresentar problemas de programação com base em sua experiência e nível \cite{zhao2018}.
+
+Apesar da ampla utilização dos JOs no ensino de programação, ainda há desafios na adaptação dos exercícios ao nível adequado dos estudantes. Trabalhos anteriores buscaram predizer a dificuldade das questões com base no texto dos enunciados \cite{santos2019} ou no exemplo de código de solução provido pela pessoa instrutora \cite{marcos2021,elrik2022}. Como ponto de partida, destacamos o artigo de \cite{jackson2023}, que  investiga a relação entre a complexidade do código e a dificuldade percebida pelos alunos na resolução de problemas em JOs, através de correlação entre métricas de complexidade e dificuldade do código e o uso de algoritmos de classificação e regressão.
+
+\section*{Agradecimentos}
+
+Os autores agradecem à Universidade Federal do Amazonas (UFAM) pelo apoio financeiro por meio do Edital 12/2024 -- PROPESP/UFAM, vinculado ao Programa Institucional de Bolsas de Iniciação Científica (PIBIC), que viabilizou a participação de um dos pesquisadores neste estudo.
+
+\bibliographystyle{sbc}
+\bibliography{sbc-template}
+
+\end{document}
